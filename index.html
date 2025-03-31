@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lee Web Game Hub - Play the best online games for free including Monster Survivors and more">
+    <title>Lee Web Game Hub - Free Online Games Collection</title>
+    <link rel="canonical" href="https://leewebgamehub.com/">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-gray': '#F5F5F7',
+                        'apple-dark': '#1D1D1F',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-apple-gray text-apple-dark">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-apple-blue">LeeWebGameHub</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-apple-blue transition">Home</a></li>
+                    <li><a href="#games" class="hover:text-apple-blue transition">Games</a></li>
+                    <li><a href="#about" class="hover:text-apple-blue transition">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-apple-blue to-blue-500 text-white py-16">
+            <div class="container mx-auto px-4 text-center fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Lee Web Game Hub</h1>
+                <p class="text-xl mb-8">Your destination for high-quality free online games</p>
+                <a href="#games" class="apple-button inline-block">Explore Games</a>
+            </div>
+        </section>
+
+        <!-- Games Collection -->
+        <section id="games" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Our Games Collection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="games-container">
+                    <!-- 游戏卡片将通过JavaScript动态加载 -->
+                    <div class="loading-spinner mx-auto">
+                        <div class="spinner"></div>
+                        <p class="text-center text-gray-500 mt-2">加载游戏中...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-apple-gray">
+            <div class="container mx-auto px-4 content-section">
+                <h2 class="text-3xl font-bold mb-8 text-center">About Lee Web Game Hub</h2>
+                <div class="max-w-3xl mx-auto">
+                    <p>Lee Web Game Hub is dedicated to providing a collection of high-quality, free online games that you can play directly in your browser. No downloads, no installations - just instant fun!</p>
+                    <p>Our curated selection of games ranges from action-packed adventures to brain-teasing puzzles, ensuring there's something for everyone regardless of your gaming preferences.</p>
+                    <p>All games are optimized for both desktop and mobile devices, so you can enjoy gaming on the go or from the comfort of your home. Happy gaming!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-apple-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2023 Lee Web Game Hub. All rights reserved.</p>
+                </div>
+                <div>
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="hover:text-apple-blue transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 游戏数据
+            const games = [
+                {
+                    id: 'monster-survivors',
+                    title: 'Monster Survivors',
+                    description: 'Survive waves of monsters in this thrilling action game. Collect power-ups, upgrade your character, and see how long you can last!',
+                    imageUrl: 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/splash.jpg', // 尝试获取游戏封面
+                    fallbackImage: 'https://via.placeholder.com/600x400/007AFF/FFFFFF?text=Monster+Survivors',
+                    link: 'monster-survivors.html',
+                    available: true
+                },
+                {
+                    id: 'space-explorer',
+                    title: 'Space Explorer',
+                    description: 'Explore the vast universe in this adventure game. Discover new planets, collect resources, and build your space empire.',
+                    imageUrl: '',
+                    fallbackImage: 'https://via.placeholder.com/600x400/34C759/FFFFFF?text=Coming+Soon',
+                    link: '#',
+                    available: false
+                },
+                {
+                    id: 'puzzle-master',
+                    title: 'Puzzle Master',
+                    description: 'Test your brain with increasingly difficult puzzles. Perfect for those who love challenges and brain teasers.',
+                    imageUrl: '',
+                    fallbackImage: 'https://via.placeholder.com/600x400/FF9500/FFFFFF?text=Coming+Soon',
+                    link: '#',
+                    available: false
+                }
+            ];
+
+            // 获取游戏容器
+            const gamesContainer = document.getElementById('games-container');
+            
+            // 清除加载动画
+            gamesContainer.innerHTML = '';
+
+            // 遍历游戏数据并创建游戏卡片
+            games.forEach(game => {
+                // 创建游戏卡片元素
+                const gameCard = document.createElement('div');
+                gameCard.className = 'feature-card bg-white rounded-lg overflow-hidden shadow-lg';
+                
+                // 图片加载函数
+                const loadGameImage = (game, imgElement) => {
+                    if (game.imageUrl) {
+                        // 尝试加载游戏提供的图片
+                        const img = new Image();
+                        img.onload = function() {
+                            // 图片加载成功，使用该图片
+                            imgElement.src = game.imageUrl;
+                        };
+                        img.onerror = function() {
+                            // 图片加载失败，使用备用图片
+                            imgElement.src = game.fallbackImage;
+                        };
+                        img.src = game.imageUrl;
+                    } else {
+                        // 直接使用备用图片
+                        imgElement.src = game.fallbackImage;
+                    }
+                };
+                
+                // 设置游戏卡片HTML内容
+                gameCard.innerHTML = `
+                    <div class="game-image-container relative w-full h-48 bg-gray-200">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="spinner"></div>
+                        </div>
+                        <img src="" alt="${game.title}" class="w-full h-48 object-cover opacity-0 transition-opacity duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">${game.title}</h3>
+                        <p class="text-gray-700 mb-4">${game.description}</p>
+                        <a href="${game.link}" class="apple-button inline-block ${!game.available ? 'bg-gray-400 cursor-not-allowed' : ''}">${game.available ? 'Play Now' : 'Coming Soon'}</a>
+                    </div>
+                `;
+                
+                // 将游戏卡片添加到容器
+                gamesContainer.appendChild(gameCard);
+                
+                // 获取图片元素并加载图片
+                const imgElement = gameCard.querySelector('img');
+                loadGameImage(game, imgElement);
+                
+                // 图片加载完成后显示
+                imgElement.onload = function() {
+                    imgElement.classList.remove('opacity-0');
+                    gameCard.querySelector('.spinner').parentElement.classList.add('hidden');
+                };
+            });
+        });
+    </script>
+</body>
+</html> 

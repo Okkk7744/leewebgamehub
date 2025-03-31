@@ -1,0 +1,225 @@
+/* Custom styles for Lee Web Game Hub website */
+
+/* Better iframe responsive behavior */
+.game-iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.game-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Hover effects for game feature cards */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom button styles using Apple design */
+.apple-button {
+    background-color: #007AFF;
+    color: white;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.apple-button:hover {
+    background-color: #0056b3;
+}
+
+/* Better typography for reading */
+.content-section p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Improved mobile experience */
+@media (max-width: 640px) {
+    .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .game-iframe-container {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        border-radius: 0;
+    }
+
+    nav ul {
+        font-size: 0.9rem;
+    }
+
+    .fullscreen-button {
+        width: 48px;
+        height: 48px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .fullscreen-button svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007AFF;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* Focus states for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid #007AFF;
+    outline-offset: 2px;
+}
+
+/* Container with max width and auto margins */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* List styling in content */
+.content-section ul {
+    margin-bottom: 1rem;
+}
+
+/* Better link transitions */
+a {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fullscreen button styling */
+.fullscreen-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent; /* 去除移动设备点击高亮 */
+    touch-action: manipulation; /* 优化触摸体验 */
+}
+
+.fullscreen-button:hover {
+    background-color: rgba(0, 122, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.fullscreen-button:active {
+    background-color: rgba(0, 122, 255, 1);
+    transform: scale(0.95);
+}
+
+.fullscreen-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Enhanced footer styling */
+footer a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 1;
+}
+
+/* 加载动画 */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 122, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #007AFF;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+}
+
+.game-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.transition-opacity {
+    transition: opacity 0.3s ease;
+} 

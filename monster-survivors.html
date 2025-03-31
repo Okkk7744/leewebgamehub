@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Monster Survivors - Survive waves of monsters in this thrilling action game on Lee Web Game Hub">
+    <title>Monster Survivors - Lee Web Game Hub</title>
+    <link rel="canonical" href="https://leewebgamehub.com/monster-survivors.html">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-gray': '#F5F5F7',
+                        'apple-dark': '#1D1D1F',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-apple-gray text-apple-dark">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-apple-blue">LeeWebGameHub</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-apple-blue transition">Home</a></li>
+                    <li><a href="/#games" class="hover:text-apple-blue transition">Games</a></li>
+                    <li><a href="/#about" class="hover:text-apple-blue transition">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Game Header -->
+        <section class="bg-gradient-to-r from-apple-blue to-blue-500 text-white py-12">
+            <div class="container mx-auto px-4 text-center fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Monster Survivors</h1>
+                <p class="text-xl mb-4">Survive the monster apocalypse in this thrilling action game!</p>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-4">
+                <!-- Game iframe -->
+                <div class="game-iframe-container mb-8 shadow-lg rounded-lg overflow-hidden relative">
+                    <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
+                            class="game-iframe" 
+                            id="game-frame"
+                            allowfullscreen="true"
+                            webkitallowfullscreen="true" 
+                            mozallowfullscreen="true"
+                            allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
+                            scrolling="no"></iframe>
+                    <button id="fullscreen-btn" class="fullscreen-button" aria-label="全屏">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Game Description -->
+                <div class="content-section max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-6">About Monster Survivors</h2>
+                    
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Game Overview</h2>
+                        <p>Monster Survivors is an intense survival action game where you face endless waves of monsters. Your goal is simple: stay alive as long as possible while defeating monsters and collecting power-ups to grow stronger.</p>
+                        <p>As you progress, the challenges become more difficult, requiring strategic thinking and quick reflexes to survive.</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Endless gameplay with progressively difficult waves of monsters</li>
+                            <li>Various character upgrades and power-ups to collect</li>
+                            <li>Unique monsters with different abilities and attack patterns</li>
+                            <li>High score system to track your best performances</li>
+                            <li>Smooth, responsive controls for both desktop and mobile devices</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-semibold mb-4">How to Play</h2>
+                        <p>Use WASD or arrow keys to move your character around the map. Your character automatically attacks nearby enemies. Collect experience orbs dropped by defeated monsters to level up and choose new abilities or upgrades.</p>
+                        <p>The key to success is managing your position to avoid being surrounded while maximizing your damage output. Keep moving and upgrading your character to survive longer!</p>
+                    </div>
+
+                    <div class="text-center my-10">
+                        <a href="/" class="apple-button inline-block">Back to Games</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Games -->
+        <section class="py-12 bg-apple-gray">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">You Might Also Like</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Placeholder Related Game Cards -->
+                    <div class="feature-card bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://via.placeholder.com/600x400/34C759/FFFFFF?text=Coming+Soon" alt="Coming Soon" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Space Explorer</h3>
+                            <p class="text-gray-700 mb-4">Explore the vast universe in this adventure game.</p>
+                            <a href="#" class="apple-button bg-gray-400 cursor-not-allowed inline-block">Coming Soon</a>
+                        </div>
+                    </div>
+
+                    <div class="feature-card bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://via.placeholder.com/600x400/FF9500/FFFFFF?text=Coming+Soon" alt="Coming Soon" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Puzzle Master</h3>
+                            <p class="text-gray-700 mb-4">Test your brain with increasingly difficult puzzles.</p>
+                            <a href="#" class="apple-button bg-gray-400 cursor-not-allowed inline-block">Coming Soon</a>
+                        </div>
+                    </div>
+
+                    <div class="feature-card bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://via.placeholder.com/600x400/5856D6/FFFFFF?text=Coming+Soon" alt="Coming Soon" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Racing Challenge</h3>
+                            <p class="text-gray-700 mb-4">Race against opponents in exciting tracks around the world.</p>
+                            <a href="#" class="apple-button bg-gray-400 cursor-not-allowed inline-block">Coming Soon</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-apple-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2023 Lee Web Game Hub. All rights reserved.</p>
+                </div>
+                <div>
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="hover:text-apple-blue transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-apple-blue transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('game-frame');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            
+            // 监听全屏变化事件
+            document.addEventListener('fullscreenchange', refocusGame);
+            document.addEventListener('webkitfullscreenchange', refocusGame);
+            document.addEventListener('mozfullscreenchange', refocusGame);
+            document.addEventListener('MSFullscreenChange', refocusGame);
+            
+            // 全屏按钮点击事件
+            fullscreenBtn.addEventListener('click', function() {
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) { /* IE11 */
+                    iframe.msRequestFullscreen();
+                }
+            });
+            
+            // 重新聚焦游戏的函数
+            function refocusGame() {
+                // 给游戏一点时间来完成全屏/退出全屏转换
+                setTimeout(function() {
+                    // 先尝试直接给iframe内容聚焦
+                    try {
+                        iframe.contentWindow.focus();
+                    } catch(e) {
+                        console.log("无法直接聚焦iframe内容，将尝试通过点击事件模拟聚焦");
+                    }
+                    
+                    // 如果直接聚焦失败，尝试通过模拟点击来获取聚焦
+                    try {
+                        // 创建一个模拟点击事件
+                        const clickEvent = new MouseEvent('click', {
+                            view: window,
+                            bubbles: true,
+                            cancelable: true
+                        });
+                        
+                        // 向iframe分发点击事件
+                        iframe.dispatchEvent(clickEvent);
+                    } catch(e) {
+                        console.log("模拟点击失败:", e);
+                    }
+                    
+                    // 确保iframe本身有焦点
+                    iframe.focus();
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html> 
